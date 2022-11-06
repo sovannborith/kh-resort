@@ -18,6 +18,7 @@ import HomeScreen from "../screens/HomeScreen";
 import UploadScreen from "../screens/UploadScreen";
 import MessageScreen from "../screens/MessageScreen";
 import SettingScreen from "../screens/SettingScreen";
+import { COLORS } from "../constants";
 
 const Tab = createBottomTabNavigator();
 
@@ -80,7 +81,7 @@ const AnimatedTabBar = ({
         style={[styles.activeBackground, animatedStyles]}
       >
         <Path
-          fill="#ff0000"
+          fill={COLORS.white}
           d="M20 0H0c11.046 0 20 8.953 20 20v5c0 19.33 15.67 35 35 35s35-15.67 35-35v-5c0-11.045 8.954-20 20-20H20z"
         />
       </AnimatedSvg>
@@ -152,7 +153,13 @@ const TabBarComponent = ({ active, options, onLayout, onPress }) => {
 const BottomTab = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator tabBar={(props) => <AnimatedTabBar {...props} />}>
+      <Tab.Navigator
+        tabBar={(props) => <AnimatedTabBar {...props} />}
+        screenOptions={{
+          headerShown: false,
+          //tabBarStyle: { backgroundColor: COLORS.gray80 },
+        }}
+      >
         <Tab.Screen
           name="Home"
           options={{
@@ -222,7 +229,7 @@ export default BottomTab;
 
 const styles = StyleSheet.create({
   tabBar: {
-    backgroundColor: "white",
+    backgroundColor: COLORS.primary,
   },
   activeBackground: {
     position: "absolute",
@@ -239,7 +246,7 @@ const styles = StyleSheet.create({
   componentCircle: {
     flex: 1,
     borderRadius: 30,
-    backgroundColor: "white",
+    backgroundColor: COLORS.primary,
   },
   iconContainer: {
     position: "absolute",

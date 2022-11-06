@@ -1,9 +1,10 @@
 import { View, Text } from "react-native";
-import React from "react";
+
+import { COLORS, SIZES, FONTS } from "../constants/index";
 
 const HomeScreen = () => {
   return (
-    <View>
+    <View style={{ flex: 1, backgroundColor: COLORS.white }}>
       <Text>HomeScreen</Text>
     </View>
   );
