@@ -197,8 +197,8 @@ const BottomTab = () => {
               <Lottie
                 ref={ref}
                 loop={false}
-                source={require("../assets/lottie/chat.icon.json")}
-                style={styles.icon}
+                source={require("../assets/lottie/search.icon.json")}
+                style={{ width: 40, height: 40 }}
               />
             ),
           }}
