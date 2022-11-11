@@ -24,16 +24,13 @@ const Tab = createBottomTabNavigator();
 
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 
-const PlaceholderScreen = () => {
-  return <View style={{ flex: 1, backgroundColor: "#604AE6" }} />;
-};
-
 // ------------------------------------------------------------------
 
 const AnimatedTabBar = ({
   state: { index: activeIndex, routes },
   navigation,
   descriptors,
+  label,
 }) => {
   const { bottom } = useSafeAreaInsets();
 
@@ -75,8 +72,8 @@ const AnimatedTabBar = ({
   return (
     <View style={[styles.tabBar, { paddingBottom: bottom }]}>
       <AnimatedSvg
-        width={110}
-        height={60}
+        width={100}
+        height={50}
         viewBox="0 0 110 60"
         style={[styles.activeBackground, animatedStyles]}
       >
@@ -98,6 +95,7 @@ const AnimatedTabBar = ({
               options={options}
               onLayout={(e) => handleLayout(e, index)}
               onPress={() => navigation.navigate(route.name)}
+              label={label}
             />
           );
         })}
@@ -106,7 +104,7 @@ const AnimatedTabBar = ({
   );
 };
 
-const TabBarComponent = ({ active, options, onLayout, onPress }) => {
+const TabBarComponent = ({ active, options, onLayout, label, onPress }) => {
   // handle lottie animation -----------------------------------------
   const ref = useRef(null);
 
@@ -145,6 +143,7 @@ const TabBarComponent = ({ active, options, onLayout, onPress }) => {
       >
         {/* @ts-ignore */}
         {options.tabBarIcon ? options.tabBarIcon({ ref }) : <Text>?</Text>}
+        {!active ? label : ""}
       </Animated.View>
     </Pressable>
   );
@@ -175,7 +174,7 @@ const BottomTab = () => {
           }}
           component={HomeScreen}
         />
-        <Tab.Screen
+        {/* <Tab.Screen
           name="Upload"
           options={{
             // @ts-ignore
@@ -189,7 +188,7 @@ const BottomTab = () => {
             ),
           }}
           component={UploadScreen}
-        />
+        /> */}
         <Tab.Screen
           name="Chat"
           options={{
@@ -230,6 +229,7 @@ export default BottomTab;
 const styles = StyleSheet.create({
   tabBar: {
     backgroundColor: COLORS.primary,
+    height: 70,
   },
   activeBackground: {
     position: "absolute",
@@ -239,8 +239,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
   component: {
-    height: 60,
-    width: 60,
+    height: 50,
+    width: 50,
     marginTop: -5,
   },
   componentCircle: {
@@ -249,6 +249,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary,
   },
   iconContainer: {
+    flex: 1,
     position: "absolute",
     top: 0,
     left: 0,
@@ -258,7 +259,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   icon: {
-    height: 36,
-    width: 36,
+    height: 25,
+    width: 25,
   },
 });
