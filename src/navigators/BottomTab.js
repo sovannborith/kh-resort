@@ -197,7 +197,7 @@ const BottomTab = () => {
               <Lottie
                 ref={ref}
                 loop={false}
-                source={require("../assets/lottie/heart.json")}
+                source={require("../assets/lottie/favorite.json")}
                 style={{ width: 60, height: 60 }}
               />
             ),

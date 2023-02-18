@@ -1,6 +1,4 @@
-import { StyleSheet } from "react-native";
 import {
-  useFonts,
   Poppins_100Thin,
   Poppins_100Thin_Italic,
   Poppins_200ExtraLight,
@@ -20,14 +18,16 @@ import {
   Poppins_900Black,
   Poppins_900Black_Italic,
 } from "@expo-google-fonts/poppins";
+import * as Font from "expo-font";
 
 import { AuthProvider } from "./src/hooks/useAuth";
 import BottomTab from "./src/navigators/BottomTab";
 import { LoadingComponent } from "./src/components";
-import { useCallback } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+  const customFonts = {
     Poppins_100Thin,
     Poppins_100Thin_Italic,
     Poppins_200ExtraLight,
@@ -46,16 +46,20 @@ export default function App() {
     Poppins_800ExtraBold_Italic,
     Poppins_900Black,
     Poppins_900Black_Italic,
-  });
+  };
 
-  const onLayoutRootView = useCallback(async () => {
-    if (fontsLoaded) {
-      await SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
+  const loadFontsAsync = async () => {
+    await Font.loadAsync(customFonts).then(() => {
+      setFontsLoaded(true);
+    });
+  };
+
+  useEffect(() => {
+    loadFontsAsync();
+  }, []);
 
   if (!fontsLoaded) {
-    return <LoadingComponent />;
+    return null;
   }
   return (
     <AuthProvider>
@@ -63,12 +67,3 @@ export default function App() {
     </AuthProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
