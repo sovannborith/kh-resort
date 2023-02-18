@@ -15,10 +15,10 @@ import Animated, {
 // lottie
 import Lottie from "lottie-react-native";
 import HomeScreen from "../screens/HomeScreen";
-import UploadScreen from "../screens/UploadScreen";
-import MessageScreen from "../screens/MessageScreen";
 import SettingScreen from "../screens/SettingScreen";
 import { COLORS } from "../constants";
+import SearchScreen from "../screens/SearchScreen";
+import FavoriteScreen from "../screens/FavoriteScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -78,7 +78,7 @@ const AnimatedTabBar = ({
         style={[styles.activeBackground, animatedStyles]}
       >
         <Path
-          fill={COLORS.white}
+          fill={COLORS.gray05}
           d="M20 0H0c11.046 0 20 8.953 20 20v5c0 19.33 15.67 35 35 35s35-15.67 35-35v-5c0-11.045 8.954-20 20-20H20z"
         />
       </AnimatedSvg>
@@ -174,23 +174,8 @@ const BottomTab = () => {
           }}
           component={HomeScreen}
         />
-        {/* <Tab.Screen
-          name="Upload"
-          options={{
-            // @ts-ignore
-            tabBarIcon: ({ ref }) => (
-              <Lottie
-                ref={ref}
-                loop={false}
-                source={require("../assets/lottie/upload.icon.json")}
-                style={styles.icon}
-              />
-            ),
-          }}
-          component={UploadScreen}
-        /> */}
         <Tab.Screen
-          name="Chat"
+          name="Search"
           options={{
             // @ts-ignore
             tabBarIcon: ({ ref }) => (
@@ -202,7 +187,22 @@ const BottomTab = () => {
               />
             ),
           }}
-          component={MessageScreen}
+          component={SearchScreen}
+        />
+        <Tab.Screen
+          name="Favorite"
+          options={{
+            // @ts-ignore
+            tabBarIcon: ({ ref }) => (
+              <Lottie
+                ref={ref}
+                loop={false}
+                source={require("../assets/lottie/heart.json")}
+                style={{ width: 60, height: 60 }}
+              />
+            ),
+          }}
+          component={FavoriteScreen}
         />
         <Tab.Screen
           name="Settings"

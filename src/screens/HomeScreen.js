@@ -4,7 +4,7 @@ import { COLORS, SIZES, FONTS, images } from "../constants/index";
 
 const HomeScreen = () => {
   return (
-    <View style={{ flex: 1, backgroundColor: COLORS.white }}>
+    <View style={{ flex: 1, backgroundColor: COLORS.gray05 }}>
       <Image
         source={images.angkor_wat}
         resizeMode="cover"
@@ -14,6 +14,7 @@ const HomeScreen = () => {
           borderBottomRightRadius: SIZES.radius * 6,
         }}
       />
+      <Text style={{ ...FONTS.body1 }}>Hello Historical Resort</Text>
     </View>
   );
 };

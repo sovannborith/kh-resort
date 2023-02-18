@@ -3,12 +3,12 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { COLORS } from "../constants";
 
-const SettingScreen = () => {
+const SearchScreen = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.gray05 }}>
-      <Text>Setting Screen</Text>
+      <Text>Search Screen</Text>
     </SafeAreaView>
   );
 };
 
-export default SettingScreen;
+export default SearchScreen;

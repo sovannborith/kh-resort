@@ -2,13 +2,13 @@ import { Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 
 export const COLORS = {
-  prePrimary: "#00f211",
+  prePrimary: "#004004", //"#00f211",
   primary: "#008609",
   darkPrimary: "#42C6A5", //"#42C6A5",     FD92A5
   primary2: "#FBB344", // Orange
   primary3: "#33354E", // Dark Pink
   secondary: "#FD92A5", // Red - FF5674
-  gray05: "#EFEFEF",
+  gray05: "#fcfcfc", //"#EFEFEF",
   gray10: "#E5E5E5",
   gray20: "#CCCCCC",
   gray30: "#A1A1A1",
@@ -57,34 +57,35 @@ export const SIZES = {
   height,
 };
 export const FONTS = {
-  largeTitle: { fontSize: SIZES.largeTitle },
-  h1: { fontSize: SIZES.h1, lineHeight: 36 }, //fontFamily: "Roboto-Black",
-  h2: { fontSize: SIZES.h2, lineHeight: 30 },
-  h3: { fontSize: SIZES.h3, lineHeight: 22 },
-  h4: { fontSize: SIZES.h4, lineHeight: 22 },
-  h5: { fontSize: SIZES.h5, lineHeight: 22 },
+  largeTitle: { fontFamily: "Poppins_400Regular", fontSize: SIZES.largeTitle },
+  h1: { fontFamily: "Poppins_400Regular", fontSize: SIZES.h1, lineHeight: 36 }, //fontFamily: "Roboto-Black",
+  h2: { fontFamily: "Poppins_400Regular", fontSize: SIZES.h2, lineHeight: 30 },
+  h3: { fontFamily: "Poppins_400Regular", fontSize: SIZES.h3, lineHeight: 22 },
+  h4: { fontFamily: "Poppins_400Regular", fontSize: SIZES.h4, lineHeight: 22 },
+  h5: { fontFamily: "Poppins_400Regular", fontSize: SIZES.h5, lineHeight: 22 },
+
   body1: {
-    //fontFamily: "Roboto-Regular",
+    fontFamily: "Poppins_400Regular",
     fontSize: SIZES.body1,
     lineHeight: 36,
   },
   body2: {
-    //fontFamily: "Roboto-Regular",
+    fontFamily: "Poppins_400Regular",
     fontSize: SIZES.body2,
     lineHeight: 30,
   },
   body3: {
-    //fontFamily: "Roboto-Regular",
+    fontFamily: "Poppins_400Regular",
     fontSize: SIZES.body3,
     lineHeight: 22,
   },
   body4: {
-    //fontFamily: "Roboto-Regular",
+    fontFamily: "Poppins_400Regular",
     fontSize: SIZES.body4,
     lineHeight: 22,
   },
   body5: {
-    //fontFamily: "Roboto-Regular",
+    fontFamily: "Poppins_400Regular",
     fontSize: SIZES.body5,
     lineHeight: 22,
   },

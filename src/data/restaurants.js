@@ -1,0 +1,68 @@
+const restaurants = [
+  {
+    id: 1,
+    restaurant_name: "One More ddd dssfddf dssdf",
+    is_active: true,
+    image: require("../assets/restaurants/rest_001.jpg"),
+    restaurant_addr: "wrf dsf dsfd dsfdf dsf dssf",
+    view_number: 400,
+  },
+  {
+    id: 2,
+    restaurant_name: "Food",
+    is_active: true,
+    image: require("../assets/restaurants/rest_002.jpg"),
+    restaurant_addr: "wrf dsfa saf saf sddfa sadf wss",
+    view_number: 200,
+  },
+  {
+    id: 3,
+    restaurant_name: "Drink",
+    is_active: true,
+    image: require("../assets/restaurants/rest_003.jpg"),
+    restaurant_addr: "wrf afef eeef",
+    view_number: 300,
+  },
+  {
+    id: 4,
+    restaurant_name: "Metro",
+    is_active: true,
+    image: require("../assets/restaurants/rest_009.jpg"),
+    restaurant_addr: "wrf dssfad dssfads",
+    view_number: 500,
+  },
+  {
+    id: 5,
+    restaurant_name: "Tonle Basac",
+    is_active: true,
+    image: require("../assets/restaurants/rest_005.jpg"),
+    restaurant_addr: "wrf dfad dfd daf",
+    view_number: 600,
+  },
+  {
+    id: 6,
+    restaurant_name: "Naga World",
+    is_active: true,
+    image: require("../assets/restaurants/rest_006.jpg"),
+    restaurant_addr: "wrf",
+    view_number: 850,
+  },
+  {
+    id: 7,
+    restaurant_name: "Wasinton",
+    is_active: true,
+    image: require("../assets/restaurants/rest_007.jpg"),
+    restaurant_addr: "wrf",
+    view_number: 400,
+  },
+  {
+    id: 8,
+    restaurant_name: "Lash",
+    is_active: true,
+    image: require("../assets/restaurants/rest_008.jpg"),
+    restaurant_addr: "wrf",
+    view_number: 1000,
+  },
+];
+
+export default restaurants;
