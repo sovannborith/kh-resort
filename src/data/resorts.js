@@ -1,4 +1,4 @@
-const resorts = [
+export default resorts = [
   {
     id: 1,
     resort_name: "Food 1",
@@ -298,5 +298,3 @@ const resorts = [
     longitude: "",
   },
 ];
-
-export default resorts;

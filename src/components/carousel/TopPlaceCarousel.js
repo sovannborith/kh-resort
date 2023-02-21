@@ -1,15 +1,29 @@
 import { FlatList, Text, View } from "react-native";
-import React from "react";
+import React, { useCallback } from "react";
+import { COLORS } from "../../constants";
+import ResortCardComponent from "../ResortCardComponent";
 
-const TopPlaceCarousel = ({ resorts }) => {
+const TopPlaceCarousel = ({ data }) => {
+  const resortKeyExtractor = useCallback(
+    (item) => `resort-${item.id.toString()}`,
+    []
+  );
   return (
-    <FlatList
-      horizontal
-      data={resorts}
-      renderItem={(item) => {
-        return <Text>{item.resort_name}</Text>;
-      }}
-    />
+    <View>
+      <FlatList
+        horizontal={true}
+        data={data}
+        showsHorizontalScrollIndicator={false}
+        keyExtractor={resortKeyExtractor}
+        snapToAlignment="center"
+        pagingEnabled={true}
+        renderItem={({ item }) => <ResortCardComponent item={item} />}
+
+        // renderItem={({ item }) => {
+        //   return <Text>{item.resort_name}</Text>;
+        // }}
+      />
+    </View>
   );
 };
 
