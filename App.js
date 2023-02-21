@@ -22,7 +22,6 @@ import * as Font from "expo-font";
 
 import { AuthProvider } from "./src/hooks/useAuth";
 import BottomTab from "./src/navigators/BottomTab";
-import { LoadingComponent } from "./src/components";
 import { useEffect, useState } from "react";
 
 export default function App() {

@@ -15,7 +15,7 @@
 // const mobile = require("../assets/icons/mobile.png");
 // const networking = require("../assets/icons/networking.png");
 // const new_icon = require("../assets/icons/new.png");
-// const notification = require("../assets/icons/notification.png");
+const notification = require("../assets/icons/notification.png");
 // const password = require("../assets/icons/password.png");
 // const profile = require("../assets/icons/profile.png");
 // const reminder = require("../assets/icons/reminder.png");
@@ -41,6 +41,7 @@
 // const check_off = require("../assets/icons/check_off.png");
 // const dotted_line = require("../assets/icons/dotted_line.png");
 const check_circle = require("../assets/icons/check_circle.png");
+const menu = require("../assets/icons/menu.png");
 export default {
   // animation,
   // back,
@@ -59,7 +60,7 @@ export default {
   // mobile,
   // networking,
   // new_icon,
-  // notification,
+  notification,
   // password,
   // profile,
   // reminder,
@@ -85,4 +86,5 @@ export default {
   // check_off,
   // dotted_line,
   check_circle,
+  menu,
 };
