@@ -28,7 +28,7 @@
     "moti": "^0.23.7",
     "nativewind": "^2.0.11",
     "react": "18.1.0",
-    "react-native": "0.70.5",
+    "react-native": "0.73.0",
     "react-native-keyboard-aware-scroll-view": "^0.9.5",
     "react-native-maps": "^1.4.0",
     "react-native-reanimated": "~2.12.0",
